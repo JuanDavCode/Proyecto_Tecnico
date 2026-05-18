@@ -22,7 +22,6 @@ El sistema recolecta y envía datos a una hoja de cálculo mediante un formulari
 2. Crear un archivo nuevo.
 3. Cambiar el nombre de la hoja (pestaña inferior) estrictamente a `Feedback`.
 4. Escribir toda la informacion descrita en el paso `A.1`
-   
 `Escribir esta información en el archivo nuevo sin dejar filas ni columnas vacías al principio.`
    
 #### A.1 Estructura de Datos (Google Sheets)
@@ -62,11 +61,12 @@ El backend actua dinamicamente con una hoja de calculo de Google Sheets, para el
 8. Copiar la URL de la aplicación web generada
 
 ### F. Visualización (Looker Studio)
-1. Ingresar al enlace de la plantilla compartida de Looker Studio. 
+1. Ingresar al enlace de la plantilla compartida de Looker Studio. (https://lookerstudio.google.com/reporting/a9e82c2b-9fcf-47d9-92dd-a52364dc94eb)
 2. Al intentar utilizarla, el sistema le advertirá que debe proporcionar sus propios datos.
 3. Seleccionar la opción para añadir una nueva fuente de datos.
 4. Elegir el conector de Google Sheets (hojas de calculo)
 5. Seleccionar el archivo creado en el paso `A` para enlazar la base de datos con los gráficos.
-
+ `Tener en cuenta que la informacion de Looker Studio se actualiza cada 15 min de forma automatica`
+ 
 ## 5. Manual de Uso
 Proporcionar la URL de la app web a los usuarios deseados. Para ver la informacion procesada ingresar a la URL del panel de Looker Studio configurado en el ultimo paso, alli podra filtrar la informacion por fecha y producto.
