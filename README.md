@@ -21,8 +21,18 @@ El sistema recolecta y envía datos a una hoja de cálculo mediante un formulari
 1. Iniciar sesión en Google Sheets.
 2. Crear un archivo nuevo.
 3. Cambiar el nombre de la hoja (pestaña inferior) estrictamente a `Feedback`.
-4. Copiar toda la información de la base de datos inicial.
-5. Pegar esta información en el archivo nuevo sin dejar filas ni columnas vacías al principio.
+4. Escribir toda la informacion descrita en el paso `A.1`
+   
+`Escribir esta información en el archivo nuevo sin dejar filas ni columnas vacías al principio.`
+   
+#### A.1 Estructura de Datos (Google Sheets)
+El backend actua dinamicamente con una hoja de calculo de Google Sheets, para el correcto funcionamiento del script,la base de datos debe tener la siguiente estructura exacta en su base en su primera hoja 
+-Columna A: Marca de Tiempo
+-Columna B: Producto
+-Columna C: Comentario
+-Columna D: Nombre de usuario
+-Columna E: Categoria de sentimiento
+-Columna F: Resumen IA
 
 ### B. API de Gemini
 1. Iniciar sesión en Google AI Studio.
@@ -52,7 +62,7 @@ El sistema recolecta y envía datos a una hoja de cálculo mediante un formulari
 8. Copiar la URL de la aplicación web generada
 
 ### F. Visualización (Looker Studio)
-1. Ingresar al enlace de la plantilla compartida de Looker Studio.
+1. Ingresar al enlace de la plantilla compartida de Looker Studio. 
 2. Al intentar utilizarla, el sistema le advertirá que debe proporcionar sus propios datos.
 3. Seleccionar la opción para añadir una nueva fuente de datos.
 4. Elegir el conector de Google Sheets (hojas de calculo)
