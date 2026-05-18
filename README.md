@@ -27,12 +27,12 @@ El sistema recolecta y envía datos a una hoja de cálculo mediante un formulari
    
 #### A.1 Estructura de Datos (Google Sheets)
 El backend actua dinamicamente con una hoja de calculo de Google Sheets, para el correcto funcionamiento del script,la base de datos debe tener la siguiente estructura exacta en su base en su primera hoja 
--Columna A: Marca de Tiempo
--Columna B: Producto
--Columna C: Comentario
--Columna D: Nombre de usuario
--Columna E: Categoria de sentimiento
--Columna F: Resumen IA
+1. Columna A: Marca de Tiempo
+2. Columna B: Producto
+3. Columna C: Comentario
+4. Columna D: Nombre de usuario
+5. Columna E: Categoria de sentimiento
+6. Columna F: Resumen IA
 
 ### B. API de Gemini
 1. Iniciar sesión en Google AI Studio.
