@@ -26,7 +26,7 @@ El sistema recolecta y envía datos a una hoja de cálculo mediante un formulari
 `Escribir esta información en el archivo nuevo sin dejar filas ni columnas vacías al principio.`
    
 #### A.1 Estructura de Datos (Google Sheets)
-El backend actua dinamicamente con una hoja de calculo de Google Sheets, para el correcto funcionamiento del script,la base de datos debe tener la siguiente estructura exacta en su base en su primera hoja 
+El backend actua dinamicamente con una hoja de calculo de Google Sheets, para el correcto funcionamiento del script, la base de datos debe tener la siguiente estructura exacta en su primera hoja:
 1. Columna A: Marca de Tiempo
 2. Columna B: Producto
 3. Columna C: Comentario
