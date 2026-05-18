@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      *{
+        margin:0;
+        padding:0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fafafa;
+        font-size:larger;
+        min-height: 100vh;
+      }
+      h1 {
+        font-weight: bold;
+        align-self: center;
+        color: white;
+      }
+      .Formulario{
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        width: 50%;
+        align-items: flex-start;
+        justify-content: center;
+        border-radius: 20px;
+        background: #00d6bc;
+        gap: 10px;
+      }
+      input, textarea, select{
+        border-radius: 8px;
+        padding: 15px 30px;
+        resize: none;
+        border: unset;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: inherit;
+        transition: all 0.3s ease;
+      }
+      textarea{
+        margin-bottom: 10px;
+      }
+      button{
+        background-color: white;
+        width: 100%;
+        padding: 10px;
+        border-radius:10px;
+        border: unset;
+        box-sizing: border-box;
+        align-self: center;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      button:hover{
+        cursor: pointer;
+        background-color: #00ab96;
+        color: white;
+      }
+      button:disabled{
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      label{
+        color: white;
+        font-weight: bold;
+      }
+      select:hover{
+        cursor: pointer;
+      }
+      input:focus, textarea:focus, select:focus, button:hover{
+        transform: scale(1.02);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="Feedbackform" class="Formulario">
+      <h1>Formulario Feedback</h1>
+      <label for="nombre">Nombre de usuario (OPCIONAL)</label>
+      <input id="nombre" type="text">
+
+      <label for="producto">Ingrese el producto (OBLIGATORIO)</label>
+      <select id="producto" required>
+        <option value="" disabled selected>Seleccionar un producto</option>
+        <option value="Producto1">Producto 1</option>
+        <option value="Producto2">Producto 2</option>
+        <option value="Producto3">Producto 3</option>
+      </select>
+
+      <label for="comentario">Comentario (OBLIGATORIO)</label>
+      <textarea id="comentario" rows="3" cols="20" required></textarea>
+
+      <button type="button" id="btnEnviar">Enviar Feedback</button>
+    </form>
+    <script>
+      document.getElementById('btnEnviar').addEventListener('click', enviarDatos);
+
+      function enviarDatos() {
+        const valorNombre = document.getElementById('nombre').value;
+        const valorProducto = document.getElementById('producto').value;
+        const valorComentario = document.getElementById('comentario').value;
+
+        if(valorProducto === ""){
+          alert("Porfavor seleccione un producto");
+          return;
+        }
+        if(valorComentario === ""){
+          alert("Porfavor Haga un comentario");
+          return;
+        }
+
+        let paqueteDatos = {
+          nombre:valorNombre,
+          producto:valorProducto,
+          feedback:valorComentario
+        };
+
+        document.getElementById('btnEnviar').disabled = true;
+        document.getElementById('btnEnviar').innerText = "Enviando...";
+
+        google.script.run
+        .withFailureHandler(envioFallido)
+        .withSuccessHandler(envioExitoso)
+        .recibirFeedback(paqueteDatos);
+      }
+      function envioExitoso () {
+        document.getElementById('Feedbackform').reset();
+        document.getElementById('btnEnviar').disabled = false;
+        document.getElementById('btnEnviar').innerText = "Enviar Feedback";
+      }
+      function envioFallido(error) {
+        alert("Envio de datos fallido" + error.message);
+        document.getElementById('btnEnviar').disabled = false;
+        document.getElementById('btnEnviar').innerText = "Enviar Feedback";
+      }
+    </script>
+  </body>
+</html>
