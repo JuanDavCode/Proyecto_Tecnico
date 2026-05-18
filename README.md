@@ -22,6 +22,7 @@ El sistema recolecta y envía datos a una hoja de cálculo mediante un formulari
 2. Crear un archivo nuevo.
 3. Cambiar el nombre de la hoja (pestaña inferior) estrictamente a `Feedback`.
 4. Escribir toda la informacion descrita en el paso `A.1`
+   
 `Escribir esta información en el archivo nuevo sin dejar filas ni columnas vacías al principio.`
    
 #### A.1 Estructura de Datos (Google Sheets)
@@ -66,6 +67,7 @@ El backend actua dinamicamente con una hoja de calculo de Google Sheets, para el
 3. Seleccionar la opción para añadir una nueva fuente de datos.
 4. Elegir el conector de Google Sheets (hojas de calculo)
 5. Seleccionar el archivo creado en el paso `A` para enlazar la base de datos con los gráficos.
+   
  `Tener en cuenta que la informacion de Looker Studio se actualiza cada 15 min de forma automatica`
  
 ## 5. Manual de Uso
